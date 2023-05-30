@@ -9,7 +9,17 @@ const ModeloSchema = Schema({
     },
     anno_modelo: {
         type: String
+    },
+    marca: {
+        type: Schema.Types.ObjectId,
+        ref: 'Marca',
+        required: true
     }
-})
+});
 
-module.exports = model('Modelo',ModeloSchema)
+ModeloSchema.methods,toJSON = function() {
+    const { __v, caballos, anno_modelo, ...data } = this.toObject();
+    return data;
+}
+
+module.exports = model('Modelo',ModeloSchema);
