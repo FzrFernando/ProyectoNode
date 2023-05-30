@@ -17,7 +17,7 @@ const ModeloSchema = Schema({
     }
 });
 
-ModeloSchema.methods,toJSON = function() {
+ModeloSchema.methods.toJSON = function() {
     const { __v, caballos, anno_modelo, ...data } = this.toObject();
     return data;
 }
