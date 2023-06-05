@@ -1,0 +1,107 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Marca",
+    "dateExported": "2023-06-05T17:09:37.477Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e25d423b-df42-4669-ada5-ea8890e648fe",
+            "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
+            "containerId": "",
+            "name": "getMarcas",
+            "url": "http://localhost:8000/marca",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-05T17:00:49.620Z",
+            "modified": "2023-06-05T17:01:52.782Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3343ecfd-a805-42d2-ac41-2903fc5f58bb",
+            "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
+            "containerId": "",
+            "name": "getMarca",
+            "url": "http://localhost:8000/marca?2",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-05T17:02:01.719Z",
+            "modified": "2023-06-05T17:02:14.257Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "2",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "afd61e59-bbbf-47af-87ba-a21d45b252ee",
+            "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
+            "containerId": "",
+            "name": "addMarca",
+            "url": "http://localhost:8000/marca",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-05T17:03:43.366Z",
+            "modified": "2023-06-05T17:04:33.862Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "6efd7f57-575b-4800-b91a-c79ee5a1e412",
+            "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
+            "containerId": "",
+            "name": "updateMarca",
+            "url": "http://localhost:8000/marca?2",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-06-05T17:05:01.716Z",
+            "modified": "2023-06-05T17:09:01.081Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "2",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bd6ffb72-751a-41ff-a2cd-8e0d91189b5c",
+            "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
+            "containerId": "",
+            "name": "deleteMarca",
+            "url": "http://localhost:8000/marca?2",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-06-05T17:07:21.072Z",
+            "modified": "2023-06-05T17:09:11.662Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "2",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}

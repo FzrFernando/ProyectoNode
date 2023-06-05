@@ -1,0 +1,107 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Modelo",
+    "dateExported": "2023-06-05T17:31:08.320Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a7108add-eed1-4401-97c9-c5c384d62784",
+            "colId": "e6db711c-8bae-41e0-9324-f87f33050ad5",
+            "containerId": "",
+            "name": "getModelos",
+            "url": "http://localhost:8000/modelo",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-05T17:20:46.315Z",
+            "modified": "2023-06-05T17:21:34.955Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fadbf9fd-58d6-433e-a855-0519bd5b6dd5",
+            "colId": "e6db711c-8bae-41e0-9324-f87f33050ad5",
+            "containerId": "",
+            "name": "getModelo",
+            "url": "http://localhost:8000/modelo?1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-05T17:22:52.510Z",
+            "modified": "2023-06-05T17:23:10.255Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "1",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "565541b8-8282-45df-80c7-bc0c91c22bf4",
+            "colId": "e6db711c-8bae-41e0-9324-f87f33050ad5",
+            "containerId": "",
+            "name": "addModelo",
+            "url": "http://localhost:8000/modelo",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-05T17:26:21.471Z",
+            "modified": "2023-06-05T17:26:36.190Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "212ede57-19f0-4e66-a9a8-7d4d9da8a147",
+            "colId": "e6db711c-8bae-41e0-9324-f87f33050ad5",
+            "containerId": "",
+            "name": "updateModelo",
+            "url": "http://localhost:8000/modelo?1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-06-05T17:26:55.582Z",
+            "modified": "2023-06-05T17:27:55.687Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "1",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b1ccfcd4-1f4a-4995-8a5f-4762287b76c0",
+            "colId": "e6db711c-8bae-41e0-9324-f87f33050ad5",
+            "containerId": "",
+            "name": "deleteModelo",
+            "url": "http://localhost:8000/modelo?1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-06-05T17:29:33.089Z",
+            "modified": "2023-06-05T17:31:03.602Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "1",
+                    "value": "",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
