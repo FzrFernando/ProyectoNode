@@ -6,9 +6,15 @@ const {getMarcas, getMarca, addMarca, updateMarca, deleteMarca} = require('../co
 
 router.get('/',getMarcas)
 
-router.get('/:id',getMarca)
+router.get('/:id',[
+    check('id','No es un id correcto').isMongoId()
+], getMarca)
 
-router.post('/',addMarca)
+router.post('/',[
+    check('nombre','El nombre es requerido').not().isEmpty(),
+    check('anno_fundacion','El año de fundacion es requerido').not().isEmpty(),
+    check('fundador','El fundador es requerido').not().isEmpty()
+],addMarca)
 
 router.put('/:id', [
     check('id','No es un id correcto').isMongoId(),

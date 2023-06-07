@@ -2,14 +2,18 @@ const Marca = require('../models/marca')
 
 async function getMarcas(req, res){
     const {nombre} = req.query
-    const query = {nombre}
-    for (const key in query) {
-        if (query[key] === undefined){
-            delete query[key];
-        }
+    let marca;
+    if(!nombre) {
+        marca = await Marca.find({})
+    } else if (nombre) {
+        marca = await Marca.find({nombre})
     }
-    const marcas = await Marca.find(query)
-    res.json(marcas)
+
+    if (marca.length){
+        res.status(200).json(marca)
+    } else {
+        res.status(404).json(`No hay ningún dato`)
+    }
 }
 
 async function getMarca(req, res) {
