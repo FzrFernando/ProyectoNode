@@ -31,7 +31,7 @@ async function addModelo(req, res) {
 
 async function updateModelo(req,res) {
     const id = req.params.id
-    const findModelo = await Marca.find({_id:id})
+    const findModelo = await Modelo.find({_id:id})
     const newModelo = req.body
     if (findModelo.length){
         await Modelo.updateOne({_id:id},newModelo)

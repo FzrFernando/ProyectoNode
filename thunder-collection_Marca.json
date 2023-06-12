@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Marca",
-    "dateExported": "2023-06-05T17:09:37.477Z",
+    "dateExported": "2023-06-12T18:10:50.444Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -24,19 +24,13 @@
             "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
             "containerId": "",
             "name": "getMarca",
-            "url": "http://localhost:8000/marca?2",
+            "url": "http://localhost:8000/marca/647dfb8319b4592108c4df9f",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-06-05T17:02:01.719Z",
-            "modified": "2023-06-05T17:02:14.257Z",
+            "modified": "2023-06-12T18:05:35.605Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "2",
-                    "value": "",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "tests": []
         },
         {
@@ -48,12 +42,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-06-05T17:03:43.366Z",
-            "modified": "2023-06-05T17:04:33.862Z",
+            "modified": "2023-06-12T18:09:27.313Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \n}",
+                "raw": "{\n  \"nombre\": \"\",\n  \"anno_fundacion\": \"\",\n  \"fundador\": \"\"\n}",
                 "form": []
             },
             "tests": []
@@ -63,22 +57,16 @@
             "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
             "containerId": "",
             "name": "updateMarca",
-            "url": "http://localhost:8000/marca?2",
+            "url": "http://localhost:8000/marca/647dfb8319b4592108c4df9f",
             "method": "PUT",
-            "sortNum": 50000,
+            "sortNum": 45000,
             "created": "2023-06-05T17:05:01.716Z",
-            "modified": "2023-06-05T17:09:01.081Z",
+            "modified": "2023-06-12T18:10:24.312Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "2",
-                    "value": "",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \n}",
+                "raw": "{\n  \"nombre\": \"\",\n  \"anno_fundacion\":\"\",\n  \"fundador\": \"\"\n}",
                 "form": []
             },
             "tests": []
@@ -88,19 +76,13 @@
             "colId": "908cb030-31b8-4180-aa62-daa5c9fa5713",
             "containerId": "",
             "name": "deleteMarca",
-            "url": "http://localhost:8000/marca?2",
+            "url": "http://localhost:8000/marca/647dfb8319b4592108c4df9f",
             "method": "DELETE",
             "sortNum": 60000,
             "created": "2023-06-05T17:07:21.072Z",
-            "modified": "2023-06-05T17:09:11.662Z",
+            "modified": "2023-06-12T18:10:33.979Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "2",
-                    "value": "",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "tests": []
         }
     ]
