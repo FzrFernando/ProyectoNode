@@ -5,20 +5,22 @@ const ModeloSchema = Schema({
         required: [true, 'El nombre es obligatorio']
     },
     caballos: {
-        type: String
+        type: String,
+        required: [true, 'Los caballos son obligatorios']
     },
     anno_modelo: {
-        type: String
+        type: String,
+        required: [true, 'El año del modelo es obligatorio']
     },
     marca: {
         type: Schema.Types.ObjectId,
         ref: 'Marca',
-        required: true
+        required: [true, 'El modelo debe pertenecer a una marca']
     }
 });
 
 ModeloSchema.methods.toJSON = function() {
-    const { __v, caballos, anno_modelo, ...data } = this.toObject();
+    const { __v, ...data } = this.toObject();
     return data;
 }
 

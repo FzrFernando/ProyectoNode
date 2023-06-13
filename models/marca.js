@@ -5,10 +5,12 @@ const MarcaSchema = Schema({
         required: [true, 'El nombre es obligatorio']
     },
     anno_fundacion: {
-        type: String
+        type: String,
+        required: [true, 'El año de fundacion es obligatorio']
     },
     fundador: {
-        type: String
+        type: String,
+        required: [true, 'El fundador de la marca es obligatorio']
     }
 })
 
