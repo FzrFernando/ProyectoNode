@@ -1,36 +1,27 @@
 {
     "client": "Thunder Client",
     "collectionName": "User",
-    "dateExported": "2023-06-12T18:54:47.317Z",
+    "dateExported": "2023-06-18T18:11:53.591Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "6941da90-a95b-467f-bcac-2644602274e5",
+            "_id": "874ab94d-0b0f-43dc-8502-15a35299e675",
             "colId": "e95f0e66-cc56-4418-9254-9076a4f9c5b1",
             "containerId": "",
-            "name": "getUsers",
-            "url": "http://localhost:8000/user",
-            "method": "GET",
-            "sortNum": 10000,
-            "created": "2023-06-12T18:39:06.558Z",
-            "modified": "2023-06-12T18:44:07.395Z",
-            "headers": [],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "03b45327-e9cd-4ee1-ab7b-b8fce98196b2",
-            "colId": "e95f0e66-cc56-4418-9254-9076a4f9c5b1",
-            "containerId": "",
-            "name": "getUser",
-            "url": "http://localhost:8000/user/6487699d8ba6d9dd64bbfaf5",
+            "name": "login",
+            "url": "http://localhost:8000/user/",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2023-06-12T18:39:29.597Z",
-            "modified": "2023-06-12T18:53:45.008Z",
+            "created": "2023-06-18T17:48:46.910Z",
+            "modified": "2023-06-18T18:11:26.728Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"ferzari\",\n  \"email\": \"fernando@gmail.com\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
@@ -38,16 +29,16 @@
             "colId": "e95f0e66-cc56-4418-9254-9076a4f9c5b1",
             "containerId": "",
             "name": "addUser",
-            "url": "http://localhost:8000/user",
+            "url": "http://localhost:8000/user/",
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-06-12T18:39:52.230Z",
-            "modified": "2023-06-12T18:54:31.058Z",
+            "modified": "2023-06-18T18:08:24.864Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"xjghf\",\n  \"email\":\"fhdfdhd@gmail.com\",\n  \"password\":\"djfdgj\"\n}",
+                "raw": "{\n  \"nombre\":\"ferzari\",\n  \"email\":\"fernando@gmail.com\",\n  \"password\":\"ferzari\",\n  \"rol\":\"ADMIN\"\n}",
                 "form": []
             },
             "tests": []
