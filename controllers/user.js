@@ -2,29 +2,38 @@ const User = require('../models/user')
 
 async function getUsuarios(req, res){
     const {nombre} = req.query
-    const query = {nombre}
-    for (const key in query) {
-        if (query[key] === undefined){
-            delete query[key];
-        }
+    let user;
+    if(!nombre) {
+        user = await User.find({})
+    } else if (nombre) {
+        user = await User.find({nombre})
     }
-    const user = await User.find(query)
-    res.json(user)
+
+    if (user.length){
+        res.status(200).json(user)
+    } else {
+        res.status(404).json(`No hay ningún dato`)
+    }
 }
 
 async function getUsuario(req, res) {
     const id = req.params.id
     const user = await User.find({_id:id});
     if (user.length) {
-        res.json(user);
+        res.status(200).json(user)
     } else {
-        res.json({ message: `El usuario ${id} no existe`})
+        res.status(404).json(`No se ha encontrado el usuario con el id ${id}`)
     }
 }
 
 async function addUsuario(req, res) {
     const {nombre,email,password} = req.body;
     const user = new User({nombre,email,password});
+
+    const repetido = await User.findOne({email})
+    if(repetido){
+        return res.status(400).json({mensage: 'Ya existe un usuario con ese correo'})
+    }
     await user.save();
     res.json({user});
 }
@@ -32,12 +41,17 @@ async function addUsuario(req, res) {
 async function updateUsuario(req,res) {
     const id = req.params.id
     const findUser = await User.find({_id:id})
+
     const newUser = req.body
-    if (findUser.length){
+    const email = newUser.email;
+    const repetido = await User.findOne({email})
+    if(repetido!=null && findUser[0].email != email){
+        res.status(400).send(`Ya existe un usuario con el correo ${email}`)
+    }else if(findUser.length){
         await User.updateOne({_id:id},newUser)
-        res.json(newUser);
-    } else {
-        res.status(404).json({mensaje:`No se ha encontrado el usuario con el id ${id}`})
+        res.json(newUser)
+    }else{
+        res.status(400).send(`No existe el usuario con id ${id}`)
     }
 }
 

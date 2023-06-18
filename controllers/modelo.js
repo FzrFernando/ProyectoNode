@@ -2,42 +2,55 @@ const Modelo = require('../models/modelo')
 
 async function getModelos(req, res){
     const {nombre} = req.query
-    const query = {nombre}
-    for (const key in query) {
-        if (query[key] === undefined){
-            delete query[key];
-        }
+    let modelo;
+    if(!nombre) {
+        modelo = await Modelo.find({})
+    } else if (nombre) {
+        modelo = await Modelo.find({nombre})
     }
-    const modelo = await Modelo.find(query)
-    res.json(modelo)
+
+    if (modelo.length){
+        res.status(200).json(modelo)
+    } else {
+        res.status(404).json(`No hay ningún dato`)
+    }
 }
 
 async function getModelo(req, res) {
     const id = req.params.id
     const modelo = await Modelo.find({_id:id});
     if (modelo.length) {
-        res.json(modelo);
+        res.status(200).json(modelo)
     } else {
-        res.json({ message: `El modelo ${id} no existe`})
+        res.status(404).json(`No se ha encontrado el modelo con el id ${id}`)
     }
 }
 
 async function addModelo(req, res) {
     const {nombre,caballos,anno_modelo,marca} = req.body;
     const modelo = new Modelo({nombre,caballos,anno_modelo,marca})
+    const newModelo = await Modelo.findOne({nombre})
+    if(newModelo){
+        return res.status(400).json({msg:"Ya existe un modelo con el mismo nombre"})
+    }
     await modelo.save();
-    res.json({modelo});
+    res.json({modelo})
 }
 
 async function updateModelo(req,res) {
     const id = req.params.id
     const findModelo = await Modelo.find({_id:id})
+
     const newModelo = req.body
-    if (findModelo.length){
+    const nombre = newModelo.nombre;
+    const repetido = await Modelo.findOne({nombre})
+    if(repetido!=null && findModelo[0].nombre != nombre){
+        res.status(400).send(`Ya existe un modelo con el nombre ${nombre}`)
+    }else if(findModelo.length){
         await Modelo.updateOne({_id:id},newModelo)
-        res.json(newModelo);
-    } else {
-        res.status(404).json({mensaje:`No se ha encontrado el modelo con el id ${id}`})
+        res.json(newModelo)
+    }else{
+        res.status(400).send(`No existe el modelo con id ${id}`)
     }
 }
 
