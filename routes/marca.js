@@ -22,6 +22,8 @@ router.post('/',[
 router.put('/:id', [
     check('id','No es un id correcto').isMongoId(),
     check('nombre','El nombre es obligatorio').not().isEmpty(),
+    check('anno_fundacion','El año de fundacion es requerido').not().isEmpty(),
+    check('fundador','El fundador es requerido').not().isEmpty(),
     validarCampos
 ], updateMarca)
 
